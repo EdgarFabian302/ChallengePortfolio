@@ -1,0 +1,545 @@
+/* Variables de colores */
+:root {
+    --color1: #FFF;
+    --color2: #0385b7;
+    --color3: #F8F9FA;
+    --color4: #D6590C;
+    --color5: #545454;
+    --color6: #666;
+}
+
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+/* Menú */
+.menu {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 80px; 
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    justify-content: space-between;
+    font-weight: 900;
+    font-size: 18px;
+    background-color: var(--color1);
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.2); 
+}
+
+.menu.has-shadow {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+.menu__header {
+    padding: 0 120px 0 80px;
+}
+
+.menu__list {
+    display: flex;
+    gap: 20px;
+    padding-right: 120px;
+    color: var(--color5);
+}
+
+.menu__list__item a {
+    position: relative;
+    color: var(--color5);
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+.menu__list__item a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color2);
+    transition: width 0.3s ease, background-color 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+.menu__list__item a:hover {
+    color: var(--color2); 
+    text-decoration-color: var(--color2);
+}
+
+.menu__list__item a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Título */
+.title {
+    padding: 180px 0 90px 0;
+    background-color: var(--color3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    font-family: "IBM Plex Serif", serif;
+}
+
+.title__div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.title__profile {
+    width: 30%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.title__container {
+    width: 40%;
+    max-width: 40%;
+    padding-left: 20px;
+}
+
+.title__bio {
+    font-size: 40px;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.title__subsection {
+    font-family: "IBM Plex Serif", serif;
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--color5);
+}
+
+.title__network {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.title__network__item {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.title__network__item a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: var(--color5);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.title__network__item a:hover {
+    color: var(--color2);
+}
+
+.text__bold {
+    font-weight: 600;
+}
+
+.title__network__item a img {
+    width: 20px; 
+    margin-left: 0px; 
+}
+
+/* Sobre mí */
+.about {
+    padding: 80px 0;
+    background-color: var(--color1);
+    text-align: center;
+}
+
+.about__container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about__title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    color: var(--color5);
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.about__paragraph {
+    font-family: "IBM Plex Serif", serif;
+    text-align: justify;
+    font-size: 20px;
+    color: var(--color5);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Skills y Hobbies */
+.skills,
+.hobbies {
+    padding: 80px 0;
+    background-color: var(--color3);
+    text-align: center;
+}
+
+.skills__title,
+.hobbies__title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    color: var(--color5);
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.skills__line,
+.hobbies__line {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.skills__box,
+.hobbies__box {
+    width: 150px;
+    margin: 20px;
+    padding: 20px;
+    background-color: var(--color1);
+}
+
+.skills__box img,
+.hobbies__box img {
+    max-width: 50%;
+    height: auto;
+}
+
+.skills__name,
+.hobbies__name {
+    color: var(--color5);
+    font-weight: 700;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+/* Formación Académica */
+.academic {
+    padding: 50px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.academic__title {
+    font-family: 'Roboto';
+    font-weight: bold;
+    color: var(--color5);
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.academic__courses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.academic__courses__box {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 250px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "IBM Plex Serif", serif;
+}
+
+.academic__courses__item__img img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+    filter: grayscale();
+}
+
+.academic__courses__item__title {
+    margin-bottom: 10px;
+    
+}
+
+.academic__courses__item__subtitle {
+    color: var(--color6);
+}
+
+/* Estilos para la sección de Experiencia/Proyectos */
+.experience {
+    background-color: var(--color3);
+    padding: 50px 0;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+.experience__section__title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: var(--color5);
+    width: 100%;
+}
+
+.experience__box {
+    background-color: var(--color1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px; 
+    width: calc(50% - 40px); 
+    max-width: 600px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.experience__img {
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.experience__info-container {
+    text-align: center;
+    font-family: "IBM Plex Serif", serif;
+}
+
+.experience__title {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: var(--color5);
+    font-weight: 800;
+}
+
+.experience__text {
+    font-size: 1.1em;
+    color: var(--color5);
+    margin-bottom: 20px;
+}
+
+.experience__description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.experience__repo button,
+.experience__demo button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.experience__repo button {
+    background-color: var(--color2);
+    color: #fff;
+}
+
+.experience__demo button {
+    background-color: var(--color4);
+    color: #fff;
+    margin-left: 10px;
+}
+
+.experience__repo button:hover,
+.experience__demo button:hover {
+    background-color: var(--color5);
+}
+
+/* Estilos para la sección de Contacto */
+.formcontato {
+    padding: 50px 0;
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+}
+
+.formcontato__contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formcontato__img {
+    width: 300px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.formcontato__text {
+    padding: 0 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.formcontato__title {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.formcontato__subtext {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.formcontato__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formcontato__input,
+.formcontato__textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.formcontato__textarea {
+    resize: none;
+}
+
+.formcontato__botao {
+    width: 93%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: var(--color2);
+    color: var(--color1);
+    transition: background-color 0.3s ease;
+}
+
+.formcontato__botao:hover {
+    background-color: var(--color4);
+    font-weight: bold;
+}
+
+/* Estilos para la sección de pie de página (footer) */
+.footer {
+    background-color: var(--color3); 
+    color: var(--color5); 
+    padding: 20px 0; 
+    text-align: center; 
+}
+
+.footer__rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__rodape p {
+    font-family: "IBM Plex Serif", serif;
+    margin: 5px 0; 
+    font-size: 14px; 
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+    .menu__header {
+        padding: 0px;
+    }
+
+    .title__div {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .title__profile {
+        order: -1;
+        width: 200px;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .title__container {
+        width: 90%;
+        max-width: 90%;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .title__bio {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .title__subsection {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .title__network {
+        justify-content: center;
+    }
+
+    .title__network__item {
+        margin-right: 10px;
+        font-size: 16px;
+    }
+
+    .formcontato__img {
+        display: none;
+    }
+
+    .experience__box {
+        width: calc(100% - 40px); 
+        max-width: none; 
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .menu__list {
+        display: none;
+    }
+
+    .menu__list__item__contato {
+        display: block;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .menu__header {
+        padding: 0px;
+    }
+}
+
+@media only screen and (min-width: 1001px) {
+    .menu__list__item__contato {
+        display: none;
+    }
+}
